@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Select</title>
+</head>
+
+<body>
+    <h1 class="navbar">
+        <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+        <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+    </h1>
+    <main class="main">
+        <div class="menu">
+            <h3>Выберите запрос</h3>
+            <ul>
+                <li>
+                    <a class="item" href="{{url_for('bp_query.simple1')}}">
+                        Сведения об издательства не сделавших поставки
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="{{url_for('bp_query.simple2')}}">
+                        Сведения о поставках        </a>
+                </li>
+                <li>
+                    <a class="item" href="{{url_for('bp_query.simple3')}}">
+                        Сведения об поставке с MAX суммой
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="{{url_for('bp_query.simple4')}}">
+                        Издательство, оформившее партию артия с наибольшим количеством копий
+                    </a>
+                </li>
+                <!-- <li>
+                    <a class="d-1" href="{{url_for('bp_query.simple3')}}">
+                        Поиск по категории и цене
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

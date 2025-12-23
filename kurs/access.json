@@ -1,0 +1,5 @@
+{
+    "admin":  ["bp_query", "bp_report"],
+    "Librarian":  ["bp_report"],
+    "Secretary":["bp_basket"]
+}

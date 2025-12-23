@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Select</title>
+</head>
+
+<body>
+    <h1 class="navbar">
+        <div>
+            <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+            <a style="margin-left: 20px;" class="home" href="{{url_for('bp_report.index')}}">Назад</a>
+        </div>
+        <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+    </h1>
+    <main class="main">
+        <div class="menu">
+            <h3>
+              Цена заказов по месяцу и году
+            </h3>
+            <a href="{{url_for('bp_report.report_create')}}">
+                Создать новый отчёт?
+            </a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Год
+                        </th>
+                        <th>Месяц
+                        </th>
+                        <th>Цена
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for report in reports %}
+                    <tr>
+                        <td>{{report['year']}}</td>
+                        <td>{{report['month']}}</td>
+                        {% if report['cost'] %}
+                        <td>{{report['cost']}}</td>
+                        {% else %}
+                        <td>---</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод параметров поиска</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    {% import 'main_components.html' as main %}
+    {{ main.navbar(role) }}
+    <!-- <h1 class="navbar"> -->
+    <!--     <a class="home" href="{{url_for('main_menu')}}">Grocery Store</a> -->
+    <!--     <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a> -->
+    <!-- </h1> -->
+    <center class="main_basket">
+        {% import 'components.html' as components %}
+        <div style="width: 70%;">
+            <center class="box">
+                {% if not items %}
+                <h1>Нет товаров по вашим требованиям</h1>
+                {% else %}
+                {{ components.render_content(items=items) }}
+                {% endif %}
+            </center>
+        </div>
+        <div class="basket">
+            <center>
+                <h2 class="">Корзина</h2>
+                {% if basket_items %}
+                {{ components.render_basket(items=basket_items) }}
+                <div>
+                    <a href="{{ url_for('bp_basket.order') }}" class="button-buy make">Оформить заказ</a>
+                </div>
+                <div>
+                    <a href="{{ url_for('bp_basket.clear_basket') }}">Очистить корзину</a>
+                </div>
+                {% else %}
+                <p>Ваша корзина пуста</p>
+                {% endif %}
+                <div class="col-md-2">
+                </div>
+            </center>
+        </div>
+
+    </center>
+</body>
+
+</html>

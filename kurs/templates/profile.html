@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Main Menu</title>
+</head>
+
+<body>
+    {% import 'main_components.html' as main %}
+    {{ main.navbar(role) }}
+    <main class="main">
+        <div class="menu_navigation">
+            <a href="{{ url_for('bp_basket.basket_index') }}"><strong>Сделать заказ</strong></a>
+        </div>
+    </main>
+</body>
+
+</html>

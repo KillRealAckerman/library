@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Select</title>
+</head>
+
+<body>
+    {% import 'main_components.html' as main %}
+    {{ main.navbar(role) }}
+    <!-- <h1 class="navbar"> -->
+    <!--     <a class="home" href="{{url_for('main_menu')}}">Grocery Store</a> -->
+    <!--     <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a> -->
+    <!-- </h1> -->
+    <main class="main">
+        <div class="menu">
+            <h3>Отчёты</h3>
+            <ul>
+                {% for report in reports %}
+                <li>
+                    <a class="item" href="{{url_for('bp_report.report_1')}}">
+                        {{report["name"]}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

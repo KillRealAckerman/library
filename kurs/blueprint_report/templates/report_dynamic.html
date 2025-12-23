@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1 class="navbar">
+        <div>
+            <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+            <a style="margin-left: 20px;" class="home" href="{{url_for('bp_report.report_1')}}">Назад</a>
+        </div>
+        <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+    </h1>
+    <main class="main">
+        <div class="menu_navigation">
+            <strong style="margin: 30px;">{{label}}</strong>
+            <div style="border-bottom: 5px solid #1095c1; width: 100%; ;"></div>
+            <div style="margin-top: 10px; justify-items: space-between;">
+                <!-- <form action="" method=POST class="search_form"> -->
+                <!--     <div style=""> -->
+                <!--         <div style="display: flex; gap: 10px; justify-content: space-between;"> -->
+                <!--             <legend>Введите год:</legend> -->
+                <!--             <select style="font-size: 20px;" name="year" autocomplete="off" required> -->
+                <!--                 <option>2020</option> -->
+                <!--                 <option>2021</option> -->
+                <!--                 <option>2022</option> -->
+                <!--                 <option selected>2023</option> -->
+                <!--             </select> -->
+                <!--         </div> -->
+                <!--         <div style="display: flex; gap: 10px;justify-content: space-between;"> -->
+                <!--             <legend>Введите месяц:</legend> -->
+                <!--             <select style="font-size: 20px;" name="month" autocomplete="off" required> -->
+                <!--                 <option value="1">Январь</option> -->
+                <!--                 <option value="2">Февраль</option> -->
+                <!--                 <option value="3">Март</option> -->
+                <!--                 <option value="4">Апрель</option> -->
+                <!--                 <option value="5">Май</option> -->
+                <!--                 <option value="6">Июнь</option> -->
+                <!--                 <option value="7">Июль</option> -->
+                <!--                 <option value="8">Август</option> -->
+                <!--                 <option value="9">Сентябрь</option> -->
+                <!--                 <option value="10">Октябрь</option> -->
+                <!--                 <option value="11">Ноябрь</option> -->
+                <!--                 <option selected value="12">Декабрь</option> -->
+                <!--             </select> -->
+                <!--         </div> -->
+                <!--     </div> -->
+                <!--     <div class="buttons" style="display: flex;"> -->
+                <!--         <input type="submit" class="button" value="Отправить"> -->
+                <!--         <input type="reset" class="button" value="Очистить"> -->
+                <!--     </div> -->
+                <!-- </form> -->
+                <!-- <a href="">Обновить?</a> -->
+            </div>
+            <!-- <div style="border-bottom: 5px solid #1095c1; width: 100%; ;"></div> -->
+            <table class="table">
+                <tr>
+                    {% for header in headers %}
+                    <th>{{header}}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+            <!-- <table class="table"> -->
+            <!--     <thead> -->
+            <!--         <tr> -->
+            <!--             <th>Месяц -->
+            <!--             </th> -->
+            <!--             <th>Год -->
+            <!--             </th> -->
+            <!--             <th>Общая стоимость -->
+            <!--             </th> -->
+            <!--         </tr> -->
+            <!--     </thead> -->
+            <!--     <tbody> -->
+            <!--         {% for report in reports %} -->
+            <!--         <tr> -->
+            <!--             <td>{{report['month']}}</td> -->
+            <!--             <td>{{report['year']}}</td> -->
+            <!--             {% if report['total_cost'] %} -->
+            <!--             <td>{{report['total_cost']}}</td> -->
+            <!--             {% else %} -->
+            <!--             <td>---</td> -->
+            <!--             {% endif %} -->
+            <!--         </tr> -->
+            <!--         {% endfor %} -->
+            <!--     </tbody> -->
+            <!-- </table> -->
+            <!-- {{prod_title}} -->
+        </div>
+    </main>
+</body>
+
+</html>

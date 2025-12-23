@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <h1 class="navbar">
+        <div>
+            <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+            <a style="margin-left: 20px;" class="home" href="{{url_for('bp_query.work_with_queries')}}">Назад</a>
+        </div>
+        <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+    </h1>
+    <main class="main">
+        <div class="menu_navigation">
+            <strong style="margin: 30px;">Поиск по категории и цене</strong>
+            <div style="border-bottom: 5px solid #1095c1; width: 100%; ;"></div>
+            <div class="input_menu">
+                <form action="" method="post" class="search_form">
+                    <div class="input_form">
+                        <label for="category" required>Категория товара </label>
+                        <input type="text" required name="category" id="category">
+                    </div>
+                    <div class="input_form">
+                        <label for="price">Цена товара ниже</label>
+                        <input type="text" required name="price" id="price">
+                    </div>
+                    <input type="reset" class="button" value="Очистить">
+                    <input type="submit" class="button" value="Отправить">
+                </form>
+            </div>
+            <div>
+                {% if error %}
+                <p class=error><strong>Ошибка:</strong> {{ error }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>components</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <center>
+
+        {% macro navbar(role) %}
+        <h1 class="navbar">
+            <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+            <div>
+
+                <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+            </div>
+        </h1>
+        {% endmacro %}
+
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css" type="text/css">
+    <title>Библиотека</title>
+</head>
+
+<body>
+    <h1 class="navbar">
+        <div>
+            <a class="home" href="{{url_for('main_menu')}}">Библиотека</a>
+            <a class="home" href="{{url_for('bp_report.reports')}}">Назад</a>
+        </div>
+        <a class="home" href="{{url_for('bp_auth.auth_exit')}}">Выход</a>
+    </h1>
+    <main class="main">
+        <div class="menu" style="text-align: left;">
+            <form action="" method=POST class="search_form" style="font-size: 30px;">
+                <fieldset>
+                    <legend>Введите год</legend>
+                    <select style="font-size: 20px;" name="year" autocomplete="off" required>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option selected>2023</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Введите месяц</legend>
+                    <select style="font-size: 20px;" name="month" autocomplete="off" required>
+                        <option value="1">Январь</option>
+                        <option value="2">Февраль</option>
+                        <option value="3">Март</option>
+                        <option value="4">Апрель</option>
+                        <option value="5">Май</option>
+                        <option value="6">Июнь</option>
+                        <option value="7">Июль</option>
+                        <option value="8">Август</option>
+                        <option value="9">Сентябрь</option>
+                        <option value="10">Октябрь</option>
+                        <option value="11">Ноябрь</option>
+                        <option selected value="12">Декабрь</option>
+                    </select>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" class="button" value="Отправить">
+                    <input type="reset" class="button" value="Очистить">
+                </div>
+            </form>
+            <!-- <form action="{{url_for('main_menu')}}"> -->
+            <!--     <input type="submit" class="button" value="Вернуться в главное меню"> -->
+            <!-- </form> -->
+            {% if error %}
+            <p class=error><strong>Произошла ошибка:</strong> {{ error }}</p>
+            {% endif %}
+        </div>
+    </main>
+</body>
+
+</html>

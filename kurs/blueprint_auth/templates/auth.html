@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link href="{{url_for('static', filename = 'sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <center>
+        <h2>Введите логин и пароль</h2>
+        <form action="" method="post">
+            <label for="login"> Логин </label>
+            <input required type="text" name="login" id="login">
+            <br><br>
+            <label for="password"> Пароль</label>
+            <input required type="password" name="password" id="password">
+            <br><br>
+            <input type="submit" class="button" value="Войти">
+            <input type="reset" class="button" value="Сбросить">
+            <br><br>
+            <a href="{{url_for('start')}}">Вернуться на главную страницу</a>
+        </form>
+    </center>
+</body>
+
+</html>
